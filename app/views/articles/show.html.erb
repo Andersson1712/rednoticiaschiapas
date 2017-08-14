@@ -1,0 +1,59 @@
+<div class="contenedor">
+<div class="top-space">
+ <div class="row center-xs">
+  <div class="col-xs-8 col-md-10">
+<section class="row center-xs">
+  <div class="arti center-xs">
+    <h1 class="titulo-arti"><%= @article.title %></h1>
+    <div class="row">
+      <div class="thumb">
+      <%= image_tag @article.cover.url(:thumb),class:"thumb"%>
+      </div>
+      <div class="col-md-6 top-space">
+        <% unless @article.user.nil? %>
+        <p>
+          Escrito por: <%=@article.user.email%>
+        </p>
+        <%end%>
+      </div>
+      <div class="col-md-6 top-space">
+        <p>
+          Visitas: <%=@article.visit_count%>
+        </p>
+      </div>
+    </div>
+  <div class="descri">
+     <%= @article.description %>
+  </div>
+  </div>
+
+</section>
+<aside class="center-xs top-space white large-padding">
+  <% if user_signed_in?%>
+  <div class="field">
+<h3>Escribe tu Comentario</h3>
+<%= render "comments/form" %>
+</div>
+<%end%>
+<% unless user_signed_in?%>
+  <p class="autor"><a href="<%=new_user_session_path%>" >Inicia Sesión</a> o <a href="<%=new_user_registration_path%>"> Crea una Cuenta </a> para Comentar</p>
+<%end%>
+</aside>
+<div class="row center-xs ">
+<section >
+  <ul id="comments-box">
+  <% @article.comments.each do |comment| %>
+  <li class=" top-space white large-padding no-list">
+    <%= comment.body %>-<%= comment.user.email %>
+  </li>
+  <%end%>
+  </ul>
+</section>
+</div>
+    </div>
+      </div>
+        </div>
+<div>
+  <%= link_to  "Más articulos de este usuario ", articlesof_path(@article.user.id), :class =>'btn date' %>
+</div>
+</div>

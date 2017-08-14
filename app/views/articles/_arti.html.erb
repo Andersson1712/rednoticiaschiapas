@@ -1,0 +1,15 @@
+<h1 class="center-xs top-space">Artículos</h1>
+<% @articles.each do |article| %>
+<section class="articles_list">
+<article class="post">
+  <h2 class="titulo"><%= link_to article.title, article,class:"titulo" %></h2>
+  <div>
+  <%= image_tag article.cover.url(:thumb),class:"thumb"%>
+  </div>
+    <p><%= article.visit_count %> Visita(s)</p>
+  <div class="extrac">
+      <p><%=truncate(article.description,length:150) %></p>
+  </div>
+</article>
+</section>
+<% end %>

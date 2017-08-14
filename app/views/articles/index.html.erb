@@ -1,0 +1,9 @@
+<div class="container" >
+  <h1 class="center-xs top-space">Artículos</h1>
+  <section class="wrap">
+    <%= render "articles/arti" %>
+  </section>
+  <div>
+    <%= will_paginate @articles %>
+  </div>
+</div>

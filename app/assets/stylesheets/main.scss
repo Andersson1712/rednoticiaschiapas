@@ -1,0 +1,14 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-background{
+    background-image: url(#{asset-path("background1.jpg") });
+    background-size: cover;
+    background-repeat: none;
+}
+.main-background1{
+    background-image: url(#{asset-path("background.jpg") });
+    background-size: cover;
+    background-repeat: none;
+
+}

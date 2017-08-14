@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RednoticiasChiapas</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+<%if user_signed_in?%>
+   <%= render  "navegacion/cuenta" %>
+<%end%>
+<%unless user_signed_in?%>
+   <%= render  "navegacion/nocuenta" %>
+<%end%>
+  </header>
+      <div class="contenedor">
+        <div id="notice_wrapper">
+   <% if notice %>
+      <p class="notice"><%= notice %></p>
+   <% elsif alert %>
+      <p class="alert"><%= alert %></p>
+   <% end %>
+ </div>
+ <script type="text/javascript">
+ $(document).ready(function() {
+
+     $("#notice_wrapper").fadeIn("slow").delay(2000).fadeOut("slow");
+
+ });
+ </script>
+      <%= yield %>
+   </div>
+  </body>
+</html>

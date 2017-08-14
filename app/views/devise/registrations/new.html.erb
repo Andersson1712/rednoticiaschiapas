@@ -1,0 +1,49 @@
+<div class="contenedor">
+  <div class="full-height row middle-xs white-text center-xs main-background no-margin"style:"background-color:red;">
+  <div class="big-padding blue text-left white-text">
+    <h1 class="no-margin bold ligth-blue-text no-margin">
+      RednoticiasChiapas
+    </h1>
+     <h2 class="top-space">Crear Cuenta</h2>
+    <p>Conectate con lo que sucede a tú alrededor</p>
+    <div class="top-space">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="center-xs">
+          <%= f.text_field :email, autofocus: true, class:"form-control center-xs",require: true %>
+          <%=  f.label :email,"Correo electronico" %>
+        </div>
+        <div class="center-xs">
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> Caracteres minimo)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class:"form-control center-xs",require: true %>
+          <%= f.label :password,"Contraseña" %>
+        </div>
+
+        <div class="center-xs">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control center-xs",require: true %>
+          <%= f.label :password_confirmation,"Confirmar Contraseña" %>
+        </div>
+        <div class="contenedor">
+        <div class="middle-xs col-xs-12 col-md-12">
+        <div>
+          <%= f.submit "Crear Cuenta", class:"btn top-space"  %>
+        </div>
+        <div class="top-space">
+          <%= link_to  "Ya tengo Cuenta",new_user_session_path,class:"btn" %>
+         </div>
+        </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+</div>
