@@ -1,14 +1,25 @@
-<% @articles.each do |article| %>
-<section class="articles_list">
-<article class="post">
-  <h2 class="titulo"><%= link_to article.title, article,class:"titulo" %></h2>
+<div class="main" >
+  <h1 class="center-xs top-space">Artículos</h1>
+  <div class="row" style="margin:1em;">
+    <% @articles.each do |article| %>
+    <div class="thumb col-xs-12 col-sm-6 col-md-4 between-xs ">
+   <h2 class="titulo"><%= link_to article.title, article,class:"titulo" %></h2>
+       <%= image_tag article.cover.url(:thumb),class:"thumb"%>
+       <div class="row">
+           <div class="col-xs-12 col-sm-6 between-xs">
+             <span><%= article.visit_count %> Visita(s)</span>
+           </div>
+           <div class="col-xs-12 col-sm-6 between-xs">
+           <span>Escrito por: <%=article.user.email%></span>
+           </div>
+         <div class="top-space">
+             <p><%=truncate(article.description,length:150) %></p>
+         </div>
+       </div>
+    </div>
+    <% end %>
+  </div>
   <div>
-  <%= image_tag article.cover.url(:thumb),class:"thumb"%>
+    <%= will_paginate @articles %>
   </div>
-    <p><%= article.visit_count %> Visita(s)</p>
-  <div class="extrac">
-      <p><%=truncate(article.description,length:150) %></p>
-  </div>
-</article>
-</section>
-<% end %>
+</div>

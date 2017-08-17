@@ -1,12 +1,8 @@
-<div class="contenedor">
-  <div class="full-height row middle-xs white-text center-xs main-background no-margin"style:"background-color:red;">
-  <div class="big-padding blue text-left white-text">
-    <h1 class="no-margin bold ligth-blue-text no-margin">
-      RednoticiasChiapas
-    </h1>
-    <h2 class="top-space">Iniciar Sesión</h2>
+  <div class=" row middle-xs center-xs main-background ">
+  <div class="col-xs-8 col-md-6 blue big-padding text-left white-text" style="margin:1em;">
+    <div class="box caja center-xs" style="margin-left:2.5em;">
+    <h3>Iniciar Sesión</h3>
     <p>Conectate con lo que sucede a tú alrededor</p>
-    <div class="top-space">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
         <div class="center-xs">
@@ -20,20 +16,17 @@
           <%= f.password_field :password, autocomplete: "off", class:"form-control center-xs",require: true %>
           <%= f.label :password,"Contraseña" %>
         </div>
-        <div class="contenedor">
+        <div class="actions">
         <div class="middle-xs col-xs-12 col-md-12">
         <div>
           <%= f.submit "Iniciar Sesión", class:"btn top-space"  %>
         </div>
-        <div class="top-space">
+        <div style="margin-top:1em;">
           <%= link_to  "No tengo cuenta", new_user_registration_path, class:"btn" %>
          </div>
         </div>
         </div>
-
       <% end %>
-    </div>
-  </div>
-  </div>
+</div>
 </div>
 </div>
