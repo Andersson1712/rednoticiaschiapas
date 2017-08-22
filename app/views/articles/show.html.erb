@@ -41,7 +41,7 @@
   <ul id="comments-box" style="margin:1em;">
   <% @article.comments.each do |comment| %>
   <li class=" top-space white large-padding no-list">
-  <span>  <%= comment.body %></span><span>    <%= comment.user.email %></span>
+  <span>  <%= comment.body %></span><span><%= comment.user.email %></span>
   </li>
   <%end%>
   </ul>

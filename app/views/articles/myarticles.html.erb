@@ -15,9 +15,9 @@
              <p><%=truncate(article.description,length:150) %></p>
          </div>
        </div>
+       <%= link_to 'Eliminar', @article, method: :delete, data: { confirm: 'Estas seguro de eliminar el Articulo' }, :class =>'btn date' %>
+       <%= link_to 'Editar ', edit_article_path(article), :class =>'btn date' %>
     </div>
-    <%= link_to 'Eliminar', @article, method: :delete, data: { confirm: 'Estas seguro de eliminar el Articulo' }, :class =>'btn date' %>
-    <%= link_to 'Editar ', edit_article_path(article), :class =>'btn date' %>
     <% end %>
   </div>
 </div>

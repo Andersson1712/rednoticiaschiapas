@@ -1,42 +1,48 @@
-<div class="contenedor">
-  <div class="full-height row middle-xs white-text center-xs main-background1 no-margin"style:"background-color:red;">
-  <div class="big-padding blue text-left white-text">
-     <h1 class="no-margin bold ligth-blue-text no-margin">
-      Crear Artículo
-    </h1>
-    <p>Informa alos demas sobre lo que sucede</p>
-    <div class="top-space">
-    <%= form_with(model: article, local: true) do |form| %>
-    <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+<div class=" main-background1">
+  <div class=" row middle-xs center-xs ">
+    <div class="col-xs-8 col-md-6 blue big-padding text-left white-text" style="margin:1em;">
+      <div class="box caja center-xs" style="margin-left:2.5em;">
+        <h1 class="no-margin bold ligth-blue-text no-margin">
+         Crear Artículo
+       </h1>
+       <p>Informa alos demas sobre lo que sucede</p>
+       <div class="top-space">
+       <%= form_with(model: article, local: true) do |form| %>
+       <% if article.errors.any? %>
+       <div id="error_explanation">
+         <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-      <ul>
-      <% article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-     <% end %>
-        <div class="center-xs">
-          <%= form.text_field :title, id: :article_title, class:"form-control center-xs",require: true %>
-          <%= form.label :title ,"Nombre de Usuario" %>
-        </div>
-        <div class="cenetr-xs">
-        Portada:  <%=form.file_field :cover %>
+         <ul>
+         <% article.errors.full_messages.each do |message| %>
+           <li><%= message %></li>
+         <% end %>
+         </ul>
+       </div>
+        <% end %>
+           <div class="center-xs">
+             <%= form.text_field :title, id: :article_title, class:"form-control center-xs",require: true %>
+             <%= form.label :title ,"Nombre de Usuario" %>
+           </div>
+           <div class="cenetr-xs">
+           Portada:  <%=form.file_field :cover %>
 
-        </div>
-        <div class="center-xs">
-          <%= form.text_area :description, id: :article_description, class:"form-control center-xs",require: true %>
-          <%=  form.label :description,"Descripción" %>
-        </div>
-        <div class="contenedor">
-        <div class="middle-xs col-xs-12 col-md-12">
-        <div>
-          <%= form.submit "Crear", class:"btn top-space"  %>
-        </div>
-        </div>
-        </div>
+           </div>
+           <div class="center-xs">
+             <%= form.text_area :description, id: :article_description, class:"form-control center-xs",require: true %>
+             <%=  form.label :description,"Descripción" %>
+           </div>
+           <div class="contenedor">
+           <div class="middle-xs col-xs-12 col-md-12">
+           <div>
+             <%= form.submit "Crear", class:"btn top-space"  %>
+           </div>
+           </div>
+           </div>
 
-      <% end %>
-    </div>
+         <% end %>
+       </div>
+  </div>
+  </div>
+  </div>
+
+</div>
