@@ -1,32 +1,35 @@
-  <div class=" row middle-xs center-xs main-background ">
-  <div class="col-xs-8 col-md-6 blue big-padding text-left white-text" style="margin:1em;">
-    <div class="box caja center-xs" style="margin-left:2.5em;">
-    <h3>Iniciar Sesión</h3>
-    <p>Conectate con lo que sucede a tú alrededor</p>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-        <div class="center-xs">
-          <%= f.text_field :email, autofocus: true, class:"form-control center-xs",require: true %>
-          <%=  f.label :email,"Correo electronico" %>
-        </div>
-        <div class="center-xs">
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> Caracteres minimo)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off", class:"form-control center-xs",require: true %>
-          <%= f.label :password,"Contraseña" %>
-        </div>
-        <div class="actions">
-        <div class="middle-xs col-xs-12 col-md-12">
-        <div>
-          <%= f.submit "Iniciar Sesión", class:"btn top-space"  %>
-        </div>
-        <div style="margin-top:1em;">
-          <%= link_to  "No tengo cuenta", new_user_registration_path, class:"btn" %>
-         </div>
-        </div>
-        </div>
-      <% end %>
-</div>
-</div>
+<div class=" main-background">
+  <div class=" row middle-xs center-xs ">
+    <div class="col-xs-8 col-md-6 blue big-padding text-left white-text" style="margin:1em;">
+      <div class="box caja center-xs" style="margin-left:2.5em;">
+      <h3>Iniciar Sesión</h3>
+      <p>Conectate con lo que sucede a tú alrededor</p>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="center-xs">
+            <%= f.text_field :email, autofocus: true, class:"form-control center-xs",require: true %>
+            <%=  f.label :email,"Correo electronico" %>
+          </div>
+          <div class="center-xs">
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> Caracteres minimo)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", class:"form-control center-xs",require: true %>
+            <%= f.label :password,"Contraseña" %>
+          </div>
+          <div class="actions">
+          <div class="middle-xs col-xs-12 col-md-12">
+          <div>
+            <%= f.submit "Iniciar Sesión", class:"btn top-space"  %>
+          </div>
+          <div style="margin-top:1em;">
+            <%= link_to  "No tengo cuenta", new_user_registration_path, class:"btn" %>
+           </div>
+          </div>
+          </div>
+        <% end %>
+  </div>
+  </div>
+  </div>
+
 </div>

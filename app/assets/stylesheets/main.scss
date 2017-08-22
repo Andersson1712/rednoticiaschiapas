@@ -5,6 +5,7 @@
     background-image: url(#{asset-path("background1.jpg") });
     background-size: cover;
     background-repeat: none;
+    width: 100%;
 }
 .main-background1{
     background-image: url(#{asset-path("background.jpg") });
@@ -16,12 +17,11 @@
 height: 65vh;
 background-size: cover;
 background-position: center;
-padding:2em;
 color:white;
 display: flex;
 justify-content: center;
 align-items: center;
-
+width: 100%;
 animation: banner 20s infinite;
 }
 @keyframes banner {

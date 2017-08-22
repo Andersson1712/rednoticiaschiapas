@@ -5,16 +5,13 @@
 <section class="row center-xs">
   <div class="arti center-xs">
     <h1 class="titulo-arti"><%= @article.title %></h1>
-    <div class="row">
+    <p class="top-space">Escrito por: <%=@article.user.email%></p>
+    <div >
+      <%= link_to  "Más articulos de este usuario ", articlesof_path(@article.user.id), :class =>'btn date top-space' %>
+    </div>
+    <div class="row center-xs">
       <div class="thumb">
       <%= image_tag @article.cover.url(:thumb),class:"thumb"%>
-      </div>
-      <div class="col-md-6 top-space">
-        <% unless @article.user.nil? %>
-        <p>
-          Escrito por: <%=@article.user.email%>
-        </p>
-        <%end%>
       </div>
       <div class="col-md-6 top-space">
         <p>
@@ -39,21 +36,18 @@
   <p class="autor"><a href="<%=new_user_session_path%>" >Inicia Sesión</a> o <a href="<%=new_user_registration_path%>"> Crea una Cuenta </a> para Comentar</p>
 <%end%>
 </aside>
-<div class="row center-xs ">
-<section >
-  <ul id="comments-box">
+<div class="row center-xs middle-xs ">
+<div class="col-xs-12 col-sm-6">
+  <ul id="comments-box" style="margin:1em;">
   <% @article.comments.each do |comment| %>
   <li class=" top-space white large-padding no-list">
-    <%= comment.body %>-<%= comment.user.email %>
+  <span>  <%= comment.body %></span><span>    <%= comment.user.email %></span>
   </li>
   <%end%>
   </ul>
-</section>
+</div>
 </div>
     </div>
       </div>
-        </div>
-<div>
-  <%= link_to  "Más articulos de este usuario ", articlesof_path(@article.user.id), :class =>'btn date' %>
-</div>
+    </div>
 </div>

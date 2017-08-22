@@ -1,18 +1,17 @@
 <div class="main" >
   <h1 class="center-xs top-space">Artículos</h1>
-  <div class="row" style="margin:1em;">
+<div class="contenedor1">
+  <div class="row between-xs" style="margin:1em;">
     <% @articles.each do |article| %>
-    <div class="thumb col-xs-12 col-sm-6 col-md-4 between-xs ">
+    <div class="thumb col-xs-12 col-sm-6 col-md-4  ">
    <h2 class="titulo"><%= link_to article.title, article,class:"titulo" %></h2>
-       <%= image_tag article.cover.url(:thumb),class:"thumb"%>
+   <span>Por: <%=article.user.email%></span>
+       <%= image_tag article.cover.url(:thumb),class:"thumb top-space"%>
        <div class="row">
-           <div class="col-xs-12 col-sm-6 between-xs">
+           <div class="col-xs-12 col-sm-6 flex-start">
              <span><%= article.visit_count %> Visita(s)</span>
            </div>
-           <div class="col-xs-12 col-sm-6 between-xs">
-           <span>Escrito por: <%=article.user.email%></span>
-           </div>
-         <div class="top-space">
+           <div class="top-space">
              <p><%=truncate(article.description,length:150) %></p>
          </div>
        </div>
@@ -22,4 +21,5 @@
   <div>
     <%= will_paginate @articles %>
   </div>
+</div>
 </div>
