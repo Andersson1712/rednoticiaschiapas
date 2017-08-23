@@ -2,7 +2,7 @@
   <div class=" row middle-xs center-xs ">
     <div class="col-xs-8 col-md-6 blue big-padding text-left white-text" style="margin:1em;">
       <div class="box caja center-xs" style="margin-left:2.5em;">
-        <h1 class="no-margin bold ligth-blue-text no-margin">
+        <h1 class="no-margin bold ligth-blue-text no-margin titulo text-white">
          Crear Artículo
        </h1>
        <p>Informa alos demas sobre lo que sucede</p>
@@ -21,7 +21,7 @@
         <% end %>
            <div class="center-xs">
              <%= form.text_field :title, id: :article_title, class:"form-control center-xs",require: true %>
-             <%= form.label :title ,"Nombre de Usuario" %>
+             <%= form.label :title ,"Título" %>
            </div>
            <div class="cenetr-xs">
            Portada:  <%=form.file_field :cover %>
@@ -31,7 +31,7 @@
              <%= form.text_area :description, id: :article_description, class:"form-control center-xs",require: true %>
              <%=  form.label :description,"Descripción" %>
            </div>
-           <div class="contenedor">
+           <div class="row">
            <div class="middle-xs col-xs-12 col-md-12">
            <div>
              <%= form.submit "Crear", class:"btn top-space"  %>

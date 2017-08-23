@@ -11,7 +11,7 @@
     background-image: url(#{asset-path("background.jpg") });
     background-size: cover;
     background-repeat: none;
-
+    width: 100%;
 }
 .hero-image{
 height: 65vh;
