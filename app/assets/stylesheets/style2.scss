@@ -91,6 +91,7 @@ header nav a {
 	color:#fff;
 	text-align: center;
 	text-decoration: none;
+	padding: 5px;
 	margin: .5em;
 	/* Flexbox */
 	flex-grow:1;
@@ -139,25 +140,6 @@ header{
 	border-bottom:none;
 }
 
-aside {
-	background:#e67e22;
-	padding:20px;
-	/*FLEX*/
-	flex:1 1 30%;
-	/*flex:0 0 300px;*/
-
-	display: flex;
-	flex-wrap:wrap;
-	flex-direction:column-reverse;
-	justify-content:flex-start;
-}
-
-aside .widget {
-	background: #d35400;
-	height:150px;
-	margin:10px;
-}
-
 footer {
 	background:#2c3e50;
 
@@ -203,7 +185,7 @@ footer .social a {
 	}
 
 	header {
-		flex-direction:row;
+		flex-direction:column;
 		padding:0;
 	}
 
