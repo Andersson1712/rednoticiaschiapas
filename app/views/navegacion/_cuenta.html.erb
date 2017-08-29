@@ -6,5 +6,5 @@
   <a href="<%=articles_path%>">Artículos</a>
   <a href=" <%=new_article_path%>">Publicar</a>
   <a href="<%=myarticles_path%>">Mís Artículos</a>
-  <a href="<%=destroy_user_session_path method: :delete%> ">Cerrar Sesión</a>
+<%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %>
 </nav>

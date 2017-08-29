@@ -1,8 +1,8 @@
   <h1 class="center-xs top-space">Artículos</h1>
 <div class="contenedor1">
-  <div class="row between-xs" style="margin:1em;">
+  <div class="row around-xs" style="margin:1em;">
     <% @articles.each do |article| %>
-    <div class="thumb col-xs-12 col-sm-6 col-md-4  ">
+    <div class="thumb col-xs-12 col-sm-6 col-md-3"  style="border-bottom: 1px solid black;margin:1em;">
    <h2 class="titulo"><%= link_to article.title, article,class:"titulo" %></h2>
    <span>Por: <%=article.user.email%></span>
        <%= image_tag article.cover.url(:thumb),class:"thumb top-space"%>
@@ -17,8 +17,4 @@
     </div>
     <% end %>
   </div>
-  <div>
-    <%= will_paginate @articles %>
-  </div>
-
 </div>

@@ -1,9 +1,9 @@
 <div class="main" >
   <h1 class="center-xs top-space">Mis Artículos</h1>
-<div class="contenedor2">
-  <div class="row between-xs" style="margin:1em;">
+<div class="contenedor1">
+  <div class="row around-xs" >
     <% @articles.each do |article| %>
-    <div class="thumb col-xs-12 col-sm-6 col-md-4  ">
+    <div class="thumb col-xs-12 col-sm-6 col-md-3 " style="border-bottom: 1px solid black;margin:1em;">
    <h2 class="titulo"><%= link_to article.title, article,class:"titulo" %></h2>
    <span>Por: <%=article.user.email%></span>
        <%= image_tag article.cover.url(:thumb),class:"thumb top-space"%>
@@ -15,13 +15,13 @@
              <p><%=truncate(article.description,length:150) %></p>
          </div>
        </div>
-       <div class="top-space">
-         <%= link_to 'Eliminar', @article, method: :delete, data: { confirm: 'Estas seguro de eliminar el Articulo' }, :class =>'btn date' %>
-         <%= link_to 'Editar ', edit_article_path(article), :class =>'btn date' %>
-       </div>
-
     </div>
     <% end %>
+  </div>
+  <div class="top-space center-xs large-padding" style="width:100%;">
+    <div class="no-list">
+      <%= will_paginate @articles %>
+    </div>
   </div>
 </div>
 </div>
