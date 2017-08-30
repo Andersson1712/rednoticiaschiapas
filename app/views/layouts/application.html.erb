@@ -14,7 +14,7 @@
   </head>
   <body>
 <header>
-<div> <p style:"<%= 'display:none;' if notice.nil? && alert.nil? %>"><%= notice %><%= alert %></p></div>
+<div id="notice_wrapper"> <p style:"<%= 'display:none;' if notice.nil? && alert.nil? %>"><%= notice %><%= alert %></p></div>
 
   <%if user_signed_in?%>
    <%= render  "navegacion/cuenta" %>
@@ -25,6 +25,13 @@
 </header>
 <div class="contenedor">
   <%= yield %>
+  <script>
+$(document).ready(function() {
+
+  $("#notice_wrapper").fadeIn("slow").delay(2000).fadeOut("slow");
+
+});
+  </script>
 <footer>
   <%=render "fotter/footer"%>
 </footer>
